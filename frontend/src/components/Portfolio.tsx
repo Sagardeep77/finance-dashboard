@@ -2,7 +2,6 @@ import { MarketPrice, Portfolio } from "@/hooks/useWebsocket";
 const url = "ws://localhost:8080";
 
 export default function PortfolioComponent({portfolio, price} : {portfolio : Portfolio | null, price : MarketPrice}) {
-
   if (!portfolio) return <p>Loading portfolio...</p>;
   // Calculate Unrealized PnL
   const pnl =

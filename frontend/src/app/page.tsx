@@ -1,12 +1,18 @@
 "use client";
 
-import Portfolio from "@/componentrs/Portfolio";
-import TradingDashboard from "@/componentrs/TradingDashboard";
+import Portfolio from "@/components/Portfolio";
+import { TestComponent1, TestComponent2 } from "@/components/TestComponents";
+import TradingDashboard from "@/components/TradingDashboard";
+import { WebsocketContextProvider } from "@/hooks/useWebsocketConnection";
 import Image from "next/image";
 
 export default function Home() {
   return <div className="flex justify-center items-center h-screen">
-    <TradingDashboard />
+    <WebsocketContextProvider>
+    {/* <TradingDashboard /> */}
+    <TestComponent1 />
+    <TestComponent2 />
+    </WebsocketContextProvider>
     
   </div>;
 }
